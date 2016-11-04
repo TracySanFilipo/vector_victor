@@ -27,7 +27,14 @@ def vector_sub(vector1, vector2):
         raise ShapeError
 
 def vector_sum(*many_args):
-    if len(many_args) == len(many_args):
+    list_to_count = [*many_args]
+    arg1 = len(list_to_count[0])
+    number = len(list_to_count)
+    list_of_number = range(number)
+    list_of_length = [len(list_to_count[n]) for n in list_of_number]
+    list_of_0s = [(l - arg1) for l in list_of_length]
+    count_of_0s = sum(list_of_0s)
+    if count_of_0s == 0:
         combo_vectors = [sum(item) for item in zip(*many_args)]
         return combo_vectors
     else:
